@@ -22,22 +22,60 @@
 			</ul>
 		</nav>
 	</header>	
-<!-- 	login modal not working
-	<div id='loginModal' class='modal fade' role='login'>
-		<div class='modal-dialog'>
+	<!-- login modal not working -->
+	<div id='loginModal' class='modal animated zoomInDown' role='login'>
+		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class="modal-header">
           			<button type="button" class="close" data-dismiss="modal">&times;</button>
-        			<h4 class="modal-title">Modal Header</h4>
+        			<h4 class="modal-title text-center">Login or Sign Up for a New Account!</h4>
         		</div>
         		<div class='modal-body'>
-        			<div class='split-panel'>
+        			<div class='row'>
+        				<div class='col-sm-6'>
+	        				<p>Login:</p>
+		        				<form id='loginBox' action='login' method='get'>
+			        				<div class="form-group">
+										<label for="useremail">Email</label>
+										<input type="email" class="form-control" id="emailLogin" placeholder="ashketchem@pokespot.com">
+									</div>
+									<div class="form-group">
+										<label for="userpassword">Password</label>
+										<input type="password" class="form-control" id="passwordLogin">
+									</div>
+		        				</form>
+        				</div>
+        				<div class='col-sm-6'>
+        					<p> Sign Up:</p>
+		        				<form id='signUpBox' action='login' method='get'>
+			        				<div class="form-group">
+										<label for="useremail">Email</label>
+										<input type="email" class="form-control" id="userEmail" placeholder="profoak@pokelabs.com">
+									</div>
+									<div class="form-group">
+										<label for="userpassword">Password</label>
+										<input type="password" class="form-control" id="userPassword">
+									</div>
+									<div class="form-group">
+										<label for="userpassword">Confirm password</label>
+										<input type="password" class="form-control" id="confirmPassword">
+									</div>									
+		        				</form>
+        				</div>        					
         			</div>
+        			<div class='row'>
+        				<div class='col-sm-6'>
+        					<button class='button button-default'>Login</button>
+        				</div>
+        				<div class='col-sm-6'>
+        					<button id='submit' class='button button-default'>Sign Up</button>
+        				</div>
+        			</div>	
         		</div>
         	</div>
 		</div>
 	</div>
- -->
+
 	<div class='container' >
 		<div class='row'>
 				<div class='col-md-12 text-center page-header'>
@@ -91,5 +129,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script src= "assets/css/bootstrapalt/js/bootstrap.js"></script>
 </body>
 </html>
