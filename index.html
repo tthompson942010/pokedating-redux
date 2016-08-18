@@ -6,14 +6,15 @@
 	<link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+<!-- 	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" /> -->
+
 </head>
 <body>
+<!-- Page header -->
 	<header id='navigation' class='navbar navbar-default navbar-fixed-top'>
 		<nav class='navbar-collapse collapse'>
 			<div class='navbar-header'>
 				<img id='logo' src='assets/images/oie_transparent.png' class='img-responsive'>
-<!-- login modal not working -->
-				<!-- <a id='login' data-toggle='modal' href='#loginModal'>login/signup</a> -->
 			</div>
 			<ul class='nav navbar-nav'>
 				<li class='navbutton animated slideInDown'><a href='#'>Home</a></li>
@@ -21,23 +22,69 @@
 				<li class='navbutton animated slideInDown'><a href='#'>Hunting</a></li>
 			</ul>
 		</nav>
-	</header>	
-<!-- 	login modal not working
-	<div id='loginModal' class='modal fade' role='login'>
-		<div class='modal-dialog'>
+	</header>
+<!--Login/signup button, changes to signout when logged in  -->
+<div class='row'>
+<div class='col-sm-1'>
+	<div id='loginPanel' class='panel panel-default'>
+		<p><a id='loginLink' href="#0">login/signup</a></p>
+	</div>
+</div>
+</div>
+<!-- login modal working -->
+	<div id='loginModal' class='modal animated zoomInDown' role='login'>
+		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class="modal-header">
           			<button type="button" class="close" data-dismiss="modal">&times;</button>
-        			<h4 class="modal-title">Modal Header</h4>
+        			<h4 class="modal-title text-center">Login or Sign Up for a New Account!</h4>
         		</div>
         		<div class='modal-body'>
-        			<div class='split-panel'>
+        			<div class='row'>
+        				<div class='col-sm-6'>
+	        				<p>Login:</p>
+		        				<form id='loginBox' action='login' method='get'>
+			        				<div class="form-group">
+										<label for="useremail">Email</label>
+										<input type="email" class="form-control" id="emailLogin" placeholder="ashketchem@pokespot.com">
+									</div>
+									<div class="form-group">
+										<label for="userpassword">Password</label>
+										<input type="password" class="form-control" id="passwordLogin">
+									</div>
+		        				</form>
+        				</div>
+        				<div class='col-sm-6'>
+        					<p> Sign Up:</p>
+		        				<form id='signUpBox' action='login' method='get'>
+			        				<div class="form-group">
+										<label for="useremail">Email</label>
+										<input type="email" class="form-control" id="userEmail" placeholder="profoak@pokelabs.com">
+									</div>
+									<div class="form-group">
+										<label for="userpassword">Password</label>
+										<input type="password" class="form-control" id="userPassword">
+									</div>
+									<div class="form-group">
+										<label for="userpassword">Confirm password</label>
+										<input type="password" class="form-control" id="confirmPassword">
+									</div>									
+		        				</form>
+        				</div>        					
         			</div>
+        			<div class='row'>
+        				<div class='col-sm-6'>
+        					<button id= 'loginSub' class='button button-default'>Login</button>
+        				</div>
+        				<div class='col-sm-6'>
+        					<button id='newuserSub' class='button button-default'>Sign Up</button>
+        				</div>
+        			</div>	
         		</div>
         	</div>
 		</div>
 	</div>
- -->
+<!-- First row, "Welcome message" -->
 	<div class='container' >
 		<div class='row'>
 				<div class='col-md-12 text-center page-header'>
@@ -45,6 +92,7 @@
 						<h3> A place for Trainers everywhere to 'catch' their true love!</h3>
 				</div>
 		</div>
+<!-- Second Row, "blurbs" -->
 		<div class='row'>
 			<div class='col-md-8'>
 				<div class='panel panel-default '>
@@ -80,16 +128,18 @@
 		</div>
 	</div>
 <!-- footer -->
-<footer id='footer'>
-	<div class='container'>
-		<p class='text-center'>
-			Designed as a joint project by the A-team; © 2016 UCF Coding Bootcamp, all rights reserved
-		</p>
-	</div>
-</footer>
+	<footer id='footer'>
+		<div class='container'>
+			<p class='text-center'>
+				Designed as a joint project by the A-team; © 2016 UCF Coding Bootcamp, all rights reserved
+			</p>
+		</div>
+	</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+<script src= "assets/css/bootstrapalt/js/bootstrap.js"></script>
 </body>
 </html>
