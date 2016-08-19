@@ -49,3 +49,36 @@ h1 {
 	background-color: black;
 	border-top: 10px solid #ec1c2b;
 }
+
+#pokeball{
+	margin-top: -4px;
+	margin-left: -8px;
+	margin-right: 5px;
+	height: 40px;
+}
+
+.panel-default .panel-heading{
+	background-color: #ec1c2b;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.box-shadow {
+    box-shadow: 10px 10px 5px #888888;
+    border-color: black;
+    border-style: solid;
+	border-radius: 5px;
+}
+
+.profile-border {
+    box-shadow: 10px 10px 5px #888888;
+    border-color: black;
+    border-style: solid;
+	border-radius: 3px;
+	border-left: #ec1c2b solid 20px;
+	border-right: #ec1c2b solid 20px;
+}
+
+#avatar {
+	margin: 20px 20px;
+}
