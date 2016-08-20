@@ -17,27 +17,18 @@
 			</div>
 			<ul class='nav navbar-nav'>
 				<li class='navbutton animated slideInDown'><a href='index.html'>Home</a></li>
-				<li class='navbutton animated slideInDown'><a href='#'>Profile</a></li>
+				<li class='navbutton animated slideInDown'><a href='profile.html'>Profile</a></li>
 				<li class='navbutton animated slideInDown'><a href='#'>Hunting</a></li>
 			</ul>
 		</nav>
 	</header>	
-<!-- 	login modal not working
-	<div id='loginModal' class='modal fade' role='login'>
-		<div class='modal-dialog'>
-			<div class='modal-content'>
-				<div class="modal-header">
-          			<button type="button" class="close" data-dismiss="modal">&times;</button>
-        			<h4 class="modal-title">Modal Header</h4>
-        		</div>
-        		<div class='modal-body'>
-        			<div class='split-panel'>
-        			</div>
-        		</div>
-        	</div>
+<div class='row'>
+	<div class='col-sm-1'>
+		<div id='loginPanel' class='panel panel-default'>
+			<p><a id='loginLink' href="#0">login/signup</a></p>
 		</div>
 	</div>
- -->
+</div>
 	<div class='container' >
 		<div class='row'>
 				<div class='col-md-12 text-center page-header'>
@@ -62,14 +53,14 @@
 							<div class="panel-heading">
 							<img id='pokeball' src='assets/images/pokeball.png'>Username:
 							</div>
-								<div class="panel-body">
+								<div id='username' class="panel-body">
 					    		Actual Username
 							</div>
 						</div>
 					</div>
 						<div class="col-md-4">
 							<div class="panel panel-default box-shadow">
-								<div class="panel-body">
+								<div id="team-level" class="panel-body">
 					    		Team:
 					    		<br>
 					    		Level:
@@ -81,14 +72,14 @@
 								<div class="panel-heading">
 								E-mail:
 								</div>
-								<div class="panel-body">
+								<div id="email" class="panel-body">
 					    		Actual E-mail
 								</div>
 							</div>
 						</div>
 						<div class="col-md-offset-4 col-md-8">
 							<div class="panel panel-default box-shadow">
-								<div class="panel-body">
+								<div id='age-gender' class="panel-body">
 					    		Age:
 					    		<br>
 					    		Gender:
@@ -116,7 +107,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/profapp.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 </body>
 </html>
