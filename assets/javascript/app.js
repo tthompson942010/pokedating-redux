@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	
-
-
 // Initialize Firebase
 	  var config = {
 	    apiKey: "AIzaSyBEqFl3BXnWkAUERtW56Kd8uCh5TAw3XBY",
@@ -12,13 +9,15 @@ $(document).ready(function(){
 	  firebase.initializeApp(config);
 
 // Create a variable to reference the database.
-	  var database = firebase.database()
+	  var database = firebase.database()	
 
 // checks login status
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 	    // User is signed in.
 	    	$('#loginLink').html('sign out');
+			// var userId = firebase.auth().currentUser.uid;
+	  //   	console.log(userId)
 		} else {
 	    // No user is signed in.
 		}
@@ -54,45 +53,74 @@ $(document).ready(function(){
 		  var errorMessage = error.message;
 		  console.log(errorCode);
 		  console.log(errorMessage);
-		});
+		}).then(function(){
 		$("#loginModal").modal('hide')
-
+		$(location).attr('href','profile.html')
+		});
 	})
 
 //on-click function for submitting new users	  
 	$("#newuserSub").on("click", function() {
-	  // Get the input values
-	  var email = ($('#userEmail').val().trim());
-	  var password = ($('#userPassword').val().trim());
-	  var confirmPassword = ($('#confirmPassword').val().trim());
-	  
-	  // Log the new user information 
-	  console.log(email);
-	  console.log(password);
-	  console.log(confirmPassword);
-	  if (password !== confirmPassword){
-	  	console.log("incorrect")
-		$('#userPassword').val("");
-		$('#confirmPassword').val("");	  	
-	  }
-	  else {
-	  	console.log("correct")
-	  	$("#loginModal").modal('hide')
+		// Get the input values
+		var email = ($('#userEmail').val().trim());
+		var password = ($('#userPassword').val().trim());
+		var confirmPassword = ($('#confirmPassword').val().trim());
 
-		$('#userEmail').val("");
-		$('#userPassword').val("");
-		$('#confirmPassword').val("");
-		//passes firebase the account info
-		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
- 			 // Handle Errors here.
-			  var errorCode = error.code;
-			  var errorMessage = error.message;
-			  console.log(errorCode);
-			  console.log(errorMessage);
-			  // ...
-			});
+		// Log the new user information 
+		console.log(email);
+		console.log(password);
+		console.log(confirmPassword);
+		//checks if password + confirmpassword match before sending userinfo to db
+		if (password !== confirmPassword){
+			console.log("incorrect")
+			$('#userPassword').val("");
+			$('#confirmPassword').val("");	  	
+		}
+		else {
+			console.log("correct")
+			$("#loginModal").modal('hide')
 
-	  }	  
+			$('#userEmail').val("");
+			$('#userPassword').val("");
+			$('#confirmPassword').val("");
+
+	
+			//passes firebase the account info
+			firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
+				var userId = user.uid
+				console.log('uid',userId)
+				database.ref('users/' + userId).set({
+					age: "", 
+					email: email,
+					gender: "",
+					level: "",
+					team: "",
+					username: ""
+				})
+
+				//Here if you want you can sign in the user
+				}).catch(function(error) {
+				// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				console.log(errorCode);
+				console.log(errorMessage);
+				// ...
+			});				
+			// var userId = firebase.auth().currentUser.uid;
+			// 	database.ref('users/' + userId).set({
+			// 		age: "",
+			// 		email: email,
+			// 		gender: "",
+			// 		level: "",
+			// 		team: "",
+			// 		username: ""
+
+			// 	});
+
+
+
+		}	  
 	return false;
 	});
 }); 
