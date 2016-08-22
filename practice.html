@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>replaceWith demo</title>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="test"> 
+  <button id="pleaseWork"> Edit </button> 
+    <div id="change">
+      Change this to a form
+    </div>
+
+</div>
+
+<div id="formChange">
+  <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+      
+      <input type="text" id="comment" value="text" />
+      
+  </form>
+</div>
+ 
+<script>
+$('#pleaseWork').click(function(){
+   $('#change').hide();
+   $('form').show();
+});
+
+</script>
+ 
+</body>
+</html>

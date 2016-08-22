@@ -46,9 +46,10 @@
 					    Avatar
 						</div>
 					</div>
-					<a class="btn btn-default" href="#" role="button">Edit Profile</a>
+					<button class="btn btn-default" id="editProfile" type="submit"> Edit Profile </button>
 				</div>
 				<div class="col-md-8">
+					<!-- Shows username  -->
 					<div class="col-md-12">
 						<div class="panel panel-default box-shadow">
 							<div class="panel-heading">
@@ -56,9 +57,17 @@
 							</div>
 								<div id='username' class="panel-body">
 					    		Actual Username
-							</div>
+								</div>
+							<!-- Form to replace when user edits profile -->
+									<div id="usernameForm" method="get" style="display: none;">
+										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
+									    	<input type="text" id="comment" />
+										</form>
+									</div>
 						</div>
+						
 					</div>
+						<!-- shows Pokemon-Go team and level -->
 						<div class="col-md-4">
 							<div class="panel panel-default box-shadow">
 								<div id="team-level" class="panel-body">
@@ -66,16 +75,32 @@
 					    		<br>
 					    		Level:
 								</div>
+
+								<!-- Form to replace when user edits profile -->
+								<div id="teamLevelForm" method="get" style="display: none;">
+								Team: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="text" id="comment" />
+									</form>
+								Level: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="text" id="comment" />
+									</form>
+								</div>
 							</div>
 						</div>
 						<div class="col-md-8">
 							<div class="panel panel-default box-shadow">
-								<div class="panel-heading">
+								<div id="userEmail" class="panel-heading">
 								E-mail:
 								</div>
 								<div id="email" class="panel-body">
 					    		Actual E-mail
 								</div>
+								<!-- Form to replace when user edits profile -->
+									<div id="emailForm" method="get" style="display: none;">
+										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
+									    	<input type="text" id="comment" />
+										</form>
+									</div>
 							</div>
 						</div>
 						<div class="col-md-offset-4 col-md-8">
@@ -84,6 +109,15 @@
 					    		Age:
 					    		<br>
 					    		Gender:
+								</div>
+								<!-- Form to replace when user edits profile -->
+								<div id="ageGenderForm" method="get" style="display: none;">
+								Age: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="number" id="comment" value="text" />
+									</form>
+								Gender: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="text" id="comment" />
+									</form>
 								</div>
 							</div>
 						</div>

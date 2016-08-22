@@ -46,4 +46,21 @@ $(document).ready(function(){
 		$(location).attr('href','index.html');
 	});
 
+	// Edit the Profile Page
+$('#editProfile').on('click', function(){
+   console.log("button works!");
+   $('#username').hide();
+   $('#team-level').hide();
+   $('#userEmail').hide();
+   $('#age-gender').hide();
+   $('form').show();
+   $('#usernameForm').show();
+   $('#teamLevelForm').show();
+   $('#emailForm').show();
+   $('#ageGenderForm').show();
 });
+
+});
+
+
+
