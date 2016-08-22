@@ -58,6 +58,7 @@ $('#editProfile').on('click', function(){
    $('#teamLevelForm').show();
    $('#emailForm').show();
    $('#ageGenderForm').show();
+   $('#saveProfileButton').show();
 });
 
 });
