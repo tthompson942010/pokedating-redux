@@ -43,8 +43,13 @@
 				<div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-body" id="avatar">
-					    Avatar
-						</div>
+<!-- 					    	<form method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
+        						<label>Select a file:</label><br>
+        						<input type="file" name="file" required />
+        						<input id='picImg' type="submit" value="Upload" />
+   							 </form>
+   							 <div id="output"></div>
+ -->						</div>
 					</div>
 					<button class="btn btn-default" id="editProfile" type="submit"> Edit Profile </button>
 					<!-- Button saves profile changes: -->
@@ -66,7 +71,7 @@
 							<!-- Form to replace when user edits profile -->
 									<div id="usernameForm" method="get" style="display: none;">
 										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
-									    	<input type="text" id="comment" />
+									    	<input type="text" id="usernameInput" />
 										</form>
 									</div>
 						</div>
@@ -83,12 +88,18 @@
 
 								<!-- Form to replace when user edits profile -->
 								<div id="teamLevelForm" method="get" style="display: none;">
-								Team: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
-								    <input type="text" id="comment" />
-									</form>
-								Level: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
-								    <input type="text" id="comment" />
-									</form>
+								Team: 
+									<select id='teamInput' class="form-control">
+									  <option>Instinct</option>
+									  <option>Mystic</option>
+									  <option>Valor</option>
+									</select>
+
+								<!-- <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="text" id="teamInput" />
+									</form> -->
+								Level:
+								    <input type="number" id="levelInput" />
 								</div>
 							</div>
 						</div>
@@ -103,7 +114,7 @@
 								<!-- Form to replace when user edits profile -->
 									<div id="emailForm" method="get" style="display: none;">
 										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
-									    	<input type="text" id="comment" />
+									    	<input type="text" id="emailInput" />
 										</form>
 									</div>
 							</div>
@@ -118,10 +129,10 @@
 								<!-- Form to replace when user edits profile -->
 								<div id="ageGenderForm" method="get" style="display: none;">
 								Age: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
-								    <input type="number" id="comment" value="text" />
+								    <input type="number" id="ageInput" />
 									</form>
 								Gender: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
-								    <input type="text" id="comment" />
+								    <input type="text" id="genderInput" />
 									</form>
 								</div>
 							</div>
