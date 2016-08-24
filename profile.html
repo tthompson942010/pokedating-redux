@@ -43,13 +43,13 @@
 				<div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-body" id="avatar">
-<!-- 					    	<form method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
+					    	<form method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
         						<label>Select a file:</label><br>
         						<input type="file" name="file" required />
         						<input id='picImg' type="submit" value="Upload" />
    							 </form>
    							 <div id="output"></div>
- -->						</div>
+						</div>
 					</div>
 					<button class="btn btn-default" id="editProfile" type="submit"> Edit Profile </button>
 					<!-- Button saves profile changes: -->
@@ -63,15 +63,23 @@
 					<div class="col-md-12">
 						<div class="panel panel-default box-shadow">
 							<div class="panel-heading">
-							<img id='pokeball' src='assets/images/pokeball.png'>Username:
+							<img id='pokeball' src='assets/images/pokeball.png'>Username/Favorite Pokemon:
 							</div>
-								<div id='username' class="panel-body">
+							<div class='panel-body'>
+								<div id='username' style='float: left'>
 					    		Actual Username
 								</div>
-							<!-- Form to replace when user edits profile -->
+					    		<div id='pokeImg' style="float: right">
+								</div>
+							</div>
+								<div id="favePokemon" style='float: right'>
+								  <input class="typeahead" type="text" placeholder="Pokemon" style="display: none;">
+								</div>
+<!-- 								<input id='favePokemon' class='typeahead tt-query' />
+ -->							<!-- Form to replace when user edits profile -->
 									<div id="usernameForm" method="get" style="display: none;">
 										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
-									    	<input type="text" id="usernameInput" />
+									    	<input type="text" id="usernameInput"/>
 										</form>
 									</div>
 						</div>
@@ -95,9 +103,6 @@
 									  <option>Valor</option>
 									</select>
 
-								<!-- <form name="input" action="html_form_action.asp" method="get" style="display: none;">
-								    <input type="text" id="teamInput" />
-									</form> -->
 								Level:
 								    <input type="number" id="levelInput" />
 								</div>
@@ -158,6 +163,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type='text/javascript' src="assets/javascript/typeahead.js"></script>
 <script type="text/javascript" src="assets/javascript/profapp.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 </body>

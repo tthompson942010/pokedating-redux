@@ -95,7 +95,11 @@ $(document).ready(function(){
 					gender: "",
 					level: "",
 					team: "",
-					username: ""
+					username: "",
+					profilepic: "",
+					aboutme: "",
+					favepoke: "",
+					favpokeimg:"",
 				})
 
 				//Here if you want you can sign in the user

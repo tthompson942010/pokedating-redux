@@ -15,6 +15,14 @@ input {
 select {
 	
 }
+
+#pokeImg {
+	margin: 10px;
+}
+
+.tt-menu {
+     display: none !important;
+}
 .navbar-nav {
 	float: right;
 	/*margin-right: 50px;*/
