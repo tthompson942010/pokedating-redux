@@ -1,0 +1,220 @@
+<!-- Skeleton file with links for a reset file, stylesheet, Bootstrap. Script links for jQuery, Firebase, and local scripts -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<link rel='reset' href='assets/css/reset.css'>
+	<link rel="stylesheet" href="assets/css/bootstrapalt/css/bootstrap.css"> 
+	<link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+</head>
+<body>
+<!-- header -->
+	<header id='navigation' class='navbar navbar-default navbar-fixed-top'>
+		<nav class='navbar-collapse collapse'>
+			<div class='navbar-header'>
+				<img id='logo' src='assets/images/oie_transparent.png' class='img-responsive'>
+			</div>
+			<ul class='nav navbar-nav'>
+				<li class='navbutton animated slideInDown'><a href='index.html'>Home</a></li>
+				<li class='navbutton animated slideInDown'><a href='profile.html'>Profile</a></li>
+				<li class='navbutton animated slideInDown'><a href='hunting.html'>Hunting</a></li>
+			</ul>
+		</nav>
+	</header>
+<!-- login button -->
+	<div class='row'>
+		<div class='col-sm-1'>
+			<div id='loginPanel' class='panel panel-default'>
+				<p><a id='loginLink' href="#0">login/signup</a></p>
+			</div>
+		</div>
+	</div>
+
+<!-- Main Content -->
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-12 text-center page-header'>
+				<h1><strong>Pokemon GO Dating!</strong></h1><br>
+				<h3> A place for Trainers everywhere to 'catch' their true love!</h3>
+		</div>
+	</div>
+	<div class='row'>
+<!-- Profile picture/Username -->
+		<div class='col-lg-3 col-lg-offset-1'>
+			<div class="panel panel-default text-left">
+				<div class='panel-heading'>
+						<div  id='usernameDisplay' class='display'>
+						</div>
+		    		<form class='inline-form'>
+		    			<input class='form-control work' type='text' id='usernameInput' placeholder='username'>
+		    		</form>
+				</div>
+				<div class="panel-body">
+						<div class='display text-center' id='profileImage'>
+						</div>
+			    	<form class='work' method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
+						<label>Select a file:</label><br>
+						<input type="file" name="file" />
+						<input id='picImg' type="submit" value="Upload" />
+					</form>
+						 <div id="output text-center"></div>
+				</div>
+			</div>
+					<button class="btn btn-default" id="editProfile" type="submit"> Edit Profile </button>
+					<!-- Button saves profile changes: -->
+					<div id="saveProfileButton" method="get" class='work'>
+					<button class="btn btn-default" id="saveProfile" type="submit"> Save Changes </button>
+					</div>			
+		</div>
+		<div class='col-md-7 col-md-offset-1'>
+<!-- Email Panel -->
+			<div class='row'>
+				<div class='col-md-7 col-md-offset-4'>
+					<div class="panel panel-default box-shadow">
+						<div class="panel-heading">
+							<img id='pokeball' src='assets/images/pokeball.png'>Email
+						</div>
+						<div class='panel-body'>
+							<!-- Actual Email -->
+					    		<form class='inline-form'>
+					    			<input class='form-control work' type='email' id='emailInput'>
+					    		</form>
+					    		<div id='emailDisplay' class='display'>
+					    		</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+<!-- Pokemon -->
+				<div class='col-md-3'>
+					<div class='panel panel-default'>
+			    		<div id='pokeDisplay' class='display text-center'>
+						</div>					
+						<div id="favePokemon">
+						<form>
+							<input class="typeahead form-control work" type="text" placeholder="Pokemon" id='pokemonInput'>
+						</form>
+						</div>					
+					</div>
+				</div>
+
+				<div class='col-md-7 col-md-offset-1'>
+					<div class='row'>
+<!-- Team -->
+						<div class='col-md-5 col-md-offset-1'>
+							<div class='text-center panel panel-default box-shadow'>
+								<div class='display' id='teamDisplay'>
+								</div>
+									<select id='teamInput' class="form-control work">
+									  <option>Instinct</option>
+									  <option>Mystic</option>
+									  <option>Valor</option>
+									</select>
+
+							</div>
+						</div>
+<!-- Level -->
+						<div class='col-md-5'>
+							<div class='text-center panel panel-default box-shadow'>
+								<div class='display'  id='levelDisplay'>
+								</div>
+								<select class="form-control work" id='levelInput'>
+<!-- level options -->
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+									<option>13</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+									<option>17</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+									<option>23</option>
+									<option>24</option>
+									<option>25</option>
+									<option>26</option>
+									<option>27</option>
+									<option>28</option>
+									<option>29</option>
+									<option>30</option>
+									<option>31</option>
+									<option>32</option>
+									<option>33</option>
+									<option>34</option>
+									<option>35</option>
+									<option>36</option>
+									<option>37</option>
+									<option>38</option>
+									<option>39</option>
+									<option>40</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class='row'>
+<!-- Gender/Age -->
+						<div class='col-sm-12'>
+							<div class='panel panel-default box-shadow'>
+								<table class='table'>
+									<tr>
+										<th>Gender</th>
+										<th>Age</th>
+									</tr>
+									<tr>
+											<form>
+										<td class='work'><input class='form-control' type='text' placeholder='gender' id='genderInput'></td>
+										<td id='genderDisplay' class='display'></td>
+										<td class='work'><input class='form-control' type='number' placeholder='age' id='ageInput'></td>
+										<td id='ageDisplay' class='display'></td>
+											</form>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- About me -->
+	<div class='row'>
+		<div class='col-sm-10 col-sm-offset-1'>
+			<div class="panel panel-default">
+				<div class="panel-body profile-border text-center">
+				<textarea class='row work' rows="4" cols="95" id='aboutInput'>
+				</textarea>
+				<div class='display' id='aboutDisplay'>
+				</div>
+			</div>		
+		</div>
+	</div>
+	</div>
+</div>
+<!-- footer -->
+	<footer id='footer'>
+		<div class='container'>
+			<p class='text-center'>
+				Designed as a joint project by the A-team; © 2016 UCF Coding Bootcamp, all rights reserved
+			</p>
+		</div>
+	</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type='text/javascript' src="assets/javascript/typeahead.js"></script>
+<script type="text/javascript" src="assets/javascript/altprofapp.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+</body>
+</html>
