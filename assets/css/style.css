@@ -67,7 +67,7 @@ select {
 }
 
 #footer {
-/*	position: absolute;
+	/*position: absolute;
 	bottom: 0;*/
 	color: #cccccb;
     width: 100%;
@@ -121,4 +121,7 @@ select {
 	width: 100%;
 	height: 100%;
 }
+
+
+
 
