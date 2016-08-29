@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<link rel='reset' href='assets/css/reset.css'>
+	<link rel="stylesheet" href="assets/css/bootstrapalt/css/bootstrap.css"> 
+	<link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+</head>
+<body>
+	<header id='navigation' class='navbar navbar-default navbar-fixed-top'>
+		<nav class='navbar-collapse collapse'>
+			<div class='navbar-header'>
+				<img id='logo' src='assets/images/oie_transparent.png' class='img-responsive'>
+<!-- login modal not working -->
+				<!-- <a id='login' data-toggle='modal' href='#loginModal'>login/signup</a> -->
+			</div>
+			<ul class='nav navbar-nav'>
+				<li class='navbutton animated slideInDown'><a href='index.html'>Home</a></li>
+				<li class='navbutton animated slideInDown'><a href='profile.html'>Profile</a></li>
+				<li class='navbutton animated slideInDown'><a href='hunting.html'>Hunting</a></li>
+			</ul>
+		</nav>
+	</header>	
+<div class='row'>
+	<div class='col-sm-1'>
+		<div id='loginPanel' class='panel panel-default'>
+			<p><a id='loginLink' href="#0">login/signup</a></p>
+		</div>
+	</div>
+</div>
+	<div class='container' >
+		<div class='row'>
+				<div class='col-md-12 text-center page-header'>
+						<h1><strong>Pokemon GO Dating!</strong></h1><br>
+						<h3> A place for Trainers everywhere to 'catch' their true love!</h3>
+				</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-body" id="avatar">
+					    	<form method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
+        						<label>Select a file:</label><br>
+        						<input type="file" name="file" required />
+        						<input id='picImg' type="submit" value="Upload" />
+   							 </form>
+   							 <div id="output"></div>
+						</div>
+					</div>					
+				</div>
+				<div class="col-md-8">
+					<!-- Shows username  -->
+					<div class="col-md-12">
+						<div class="panel panel-default box-shadow">
+							<div class="panel-heading">
+							<img id='pokeball' src='assets/images/pokeball.png'>Username/Favorite Pokemon:
+							</div>
+							<div class='panel-body'>
+								<div id='username' style='float: left'>
+					    		Actual Username
+								</div>
+					    		<div id='pokeImg' style="float: right">
+								</div>
+							</div>
+								<div id="favePokemon" style='float: right'>
+								  <input class="typeahead" type="text" placeholder="Pokemon" style="display: none;">
+								</div>
+<!-- 								<input id='favePokemon' class='typeahead tt-query' />
+ -->							<!-- Form to replace when user edits profile -->
+									<div id="usernameForm" method="get" style="display: none;">
+										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
+									    	<input type="text" id="usernameInput"/>
+										</form>
+									</div>
+						</div>
+						
+					</div>
+						<!-- shows Pokemon-Go team and level -->
+						<div class="col-md-4">
+							<div class="panel panel-default box-shadow">
+								<div id="team-level" class="panel-body">
+					    		Team:
+					    		<br>
+					    		Level:
+								</div>
+
+								<!-- Form to replace when user edits profile -->
+								<div id="teamLevelForm" method="get" style="display: none;">
+								Team: 
+									<select id='teamInput' class="form-control">
+									  <option>Instinct</option>
+									  <option>Mystic</option>
+									  <option>Valor</option>
+									</select>
+
+								Level:
+								    <input type="number" id="levelInput" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="panel panel-default box-shadow">
+								<div id="userEmail" class="panel-heading">
+								<a href="#" onClick="MyWindow=window.open('chat/index.html','MyWindow',width=600,height=300); return false;">Message Me: Click Here</a>
+								</div>
+								
+								<!-- Form to replace when user edits profile -->
+									<div id="emailForm" method="get" style="display: none;">
+										<form name="input" action="html_form_action.asp" method="get" style="display: none;">
+									    	<input type="text" id="emailInput" />
+										</form>
+									</div>
+							</div>
+						</div>
+						<div class="col-md-offset-4 col-md-8">
+							<div class="panel panel-default box-shadow">
+								<div id='age-gender' class="panel-body">
+					    		Age:
+					    		<br>
+					    		Gender:
+								</div>
+								<!-- Form to replace when user edits profile -->
+								<div id="ageGenderForm" method="get" style="display: none;">
+								Age: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="number" id="ageInput" />
+									</form>
+								Gender: <form name="input" action="html_form_action.asp" method="get" style="display: none;">
+								    <input type="text" id="genderInput" />
+									</form>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body profile-border">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+<!-- footer -->
+<footer id='footer'>
+	<div class='container'>
+		<p class='text-center'>
+			Designed as a joint project by the A-team; © 2016 UCF Coding Bootcamp, all rights reserved
+		</p>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type='text/javascript' src="assets/javascript/typeahead.js"></script>
+<script type="text/javascript" src="assets/javascript/userProfapp.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+</body>
+</html>

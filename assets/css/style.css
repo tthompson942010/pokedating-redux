@@ -109,6 +109,10 @@ select {
 	margin: 20px 20px;
 	padding-left: 0px;
 }
+#profileImg {
+		max-height: 200px;
+	max-width: 200px;
+}
 
 .jumbotron {
 	height: 800px;

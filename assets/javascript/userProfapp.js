@@ -21,17 +21,28 @@ $(document).ready(function(){
 
 // Create a variable to reference the database.
 	var database = firebase.database()
-	var userId;
+	var userId = localStorage.getItem("selectedUser");
 
 // checks login status
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 // if user is signed in.
 			$('#loginLink').html('sign out');
-			userId = user.uid;
 			console.log(userId);
 			database.ref('users/' + userId).on('value', function(snapshot){
 				snap = snapshot.val();
+				$("#username").html(snap.username);
+				$("#team-level").html("Team: "+ snap.team + "<br>" + "Level: " + snap.level);
+				$("#email").html();
+				$("#age-gender").html("Age: " + snap.age + "<br>" + "Gender: " + snap.gender);
+				$("#pokeImg").empty();
+				console.log(snap.favpokeimg)
+				$("#pokeImg").append("<img src='"+snap.favpokeimg+"'>")
+				.append("<p>" + snap.favepoke + "</p>")
+				if(snapshot.child('profilepic').exists()){
+				$("#avatar").empty();
+				$("#avatar").append("<img id='profileImg' src='"+snap.profilepic+"'>");
+				}
 				username = snap.username;
 				level = snap.level;
 				team = snap.team;
@@ -40,22 +51,6 @@ $(document).ready(function(){
 				gender = snap.gender;
 				avatar = snap.profilepic;
 				favepoke = snap.favepoke;
-				console.log("avatar"+avatar);
-
-				$("#username").html(snap.username);
-				$("#team-level").html("Team: "+ snap.team + "<br>" + "Level: " + snap.level);
-				$("#email").html(snap.email);
-				$("#age-gender").html("Age: " + snap.age + "<br>" + "Gender: " + snap.gender);
-				$("#pokeImg").empty();
-				console.log(snap.favpokeimg)
-				$("#pokeImg").append("<img src='"+snap.favpokeimg+"'>")
-				.append("<p>" + snap.favepoke + "</p>")
-				if(avatar.indexOf("http") > -1){
-					console.log("empty avatar");
-				$("#avatar").empty();
-				$("#avatar").append("<img id='profileImg' src='"+snap.profilepic+"'>");
-				}
-				
 				})
 // } else {
 		// 	console.log('no user')
@@ -154,6 +149,7 @@ $(document).ready(function(){
     })
 
 
+
     //when this function is called it will call the api input the img fron the div with the ID fileinfo
     //window is nessesary due to the form type. 
 
@@ -172,11 +168,11 @@ $(document).ready(function(){
 	                console.log("PHP Output:");
 	                console.log( data.data.thumb_url );
 	                // sets the avatar var to the url of the image
-	                avatar = data.data.thumb_url.trim();
+	                avatar = data.data.thumb_url;
 	                console.log( avatar);
 	                showImg();
 	                userId = firebase.auth().currentUser.uid;
-	                database.ref('users/' + userId).update({
+	                database.ref('users/' + userId).push({
 	                	profilepic: avatar
 	                })
 
@@ -185,7 +181,7 @@ $(document).ready(function(){
 	        }
 	        //checks to see if there is an image already saved, if so it will show it, if not it leaves it the same.
 	function showImg() {
-	    if (avatar.indexOf("http") > -1){
+	    if (avatar != ""){
 	        $("#avatar").empty();
 	        $("#avatar").append("<img id='profileImg' src='"+avatar+"'>");
 	    }

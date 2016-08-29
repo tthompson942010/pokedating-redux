@@ -90,6 +90,7 @@ $(document).ready(function(){
 				var userId = user.uid
 				console.log('uid',userId)
 				database.ref('users/' + userId).set({
+					ID: userId,
 					age: "", 
 					email: email,
 					gender: "",
